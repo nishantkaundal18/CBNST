@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#define f(x) (x-cos(x))
+#define e 0.0001
+int main()
+{
+	int i=0;
+	float x0,x1,x2,f0,f1,f2;
+    printf("Fn is x-cos(x)");
+    printf("\nx0=");
+    scanf("%f",&x0);
+    printf("x1=");
+    scanf("%f",&x1);
+	do{
+		f0=f(x0);
+		f1=f(x1);
+		x2=((x0*f(x1))-x1*f(x0))/(f1-f0);
+		f2=f(x2);
+	    if(f0*f2<0)
+	    {
+	        x1=x2;
+	        f1=f2;
+	    }
+	    else
+	    {
+	        x0=x2;
+	        f0=f2;
+	    }
+		i++;
+		 printf("\nIteration:%d\t",i);
+        printf("Root Value:%f\t",x2);
+	}while(fabs(f(x2))>e);
+	printf("\n Approximation Root : %f",x2);
+	return 0;
+}
