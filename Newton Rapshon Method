@@ -2,7 +2,7 @@
 #include<conio.h>
 #include<math.h>
 #define f(x) (x-cos(x))
-#define df(x) (x+sin(x))
+#define df(x) (1+sin(x))
 #define e 0.0001
 int main()
 {
